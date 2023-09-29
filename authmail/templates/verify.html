@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <!-- Add your CSS links or inline styles here -->
+    <link rel="stylesheet" href="path_to_your_stylesheet.css">
+
+    <style>
+
+    .success-message {
+        color: #4CAF50; /* Green color for success messages */
+        background-color: #E9F7EF; /* Light green background */
+        padding: 10px;
+        border: 1px solid #4CAF50;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Verification</h1>
+       <form method="post">
+        {% csrf_token %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="success-message">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+       </form>
+    </div>
+</body>
+</html>
