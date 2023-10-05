@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe List</title>
+</head>
+<body>
+    <h1>Recipe List</h1>
+    <ul>
+        {% for recipe in recipes %}
+            <li><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></li>
+        {% empty %}
+            <li>No recipes available.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_recipe' %}">Add Recipe</a><br>
+    <a href="{% url 'add_ingredients' %}">Add Ingredients</a>
+
+</body>
+</html>
