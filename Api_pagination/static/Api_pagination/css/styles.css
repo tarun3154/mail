@@ -1,0 +1,34 @@
+/* styles.css */
+
+header {
+    background-color: #343a40; /* Dark background color */
+    color: white; /* Text color */
+    padding: 10px 0;
+}
+
+body{
+    height: 80vh;
+}
+
+.navbar-brand {
+    font-size: 24px; 
+}
+
+.nav-item {
+    margin-right: 20px; 
+}
+
+/* Style the main content area */
+main {
+    background-color: #f8f9fa; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+
+
+
+
+
+
