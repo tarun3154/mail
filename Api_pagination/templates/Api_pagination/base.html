@@ -49,35 +49,4 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-{% block javascript %}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script>
-  // Define a variable to store the scroll position
-  let savedScrollPosition = 0;
-
-  // Smoothly scroll to the top when changing pages (except for previous and next links)
-  $('.page-link').click(function(e) {
-    const targetPage = $(this).attr('href');
-
-    // Check if the clicked link is a previous or next link by its URL
-    const isPreviousLink = targetPage.includes('page={{ page.previous_page_number }}');
-    const isNextLink = targetPage.includes('page={{ page.next_page_number }}');
-
-    if (!isPreviousLink && !isNextLink) {
-      // Store the current scroll position
-      savedScrollPosition = $(window).scrollTop();
-
-      e.preventDefault();
-      $('html, body').animate({
-        scrollTop: $(targetPage).offset().top
-      }, 500);
-    }
-  });
-
-  // Restore scroll position when navigating back
-  $(document).ready(function() {
-    $(window).scrollTop(savedScrollPosition);
-  });
-</script>
-{% endblock %}
